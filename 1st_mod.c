@@ -19,8 +19,9 @@ long long exgcd(long long a,long long b,long long *x,long long *y){ //return gcd
     }
     else{
         exgcd( b, a%b, x, y);
+        long long tmp = *x;
         *x = *y;
-        *y = *x - (a/b)*(*y);
+        *y = tmp - (a/b)*(*y);
     }
 
 }
