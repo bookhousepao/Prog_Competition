@@ -22,4 +22,5 @@ long long exgcd(long long a,long long b,long long *x,long long *y){ //return gcd
         *x = *y;
         *y = *x - (a/b)*(*y);
     }
+
 }
