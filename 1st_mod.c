@@ -8,14 +8,17 @@ int main(){
         long long x=1;
         long long y=1;
         exgcd(a,m,&x,&y);
+        if(x<0)
+            x+=m;
         printf("%lld",x);
 
 return 0;
 }
 
-long long exgcd(long long a,long long b,long long *x,long long *y){ //return gcd(a,b) and change x y that ax + by = gcd(a,b)
+long long exgcd(long long a,long long b,long long *x,long long *y){ //return gcd(a,b) and modify x y so that ax + by = gcd(a,b)
     if ( b == 0){
         *x = 1, *y = 0;
+        return a;
     }
     else{
         exgcd( b, a%b, x, y);
